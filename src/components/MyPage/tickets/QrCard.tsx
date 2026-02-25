@@ -18,8 +18,7 @@ const QrCard = ({
   memberNick,
   onClose,
 }: QrCardProps) => {
-  const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-  const checkinUrl = `${window.location.origin}${base}/checkin/result?name=${encodeURIComponent(memberName)}&nick=${encodeURIComponent(memberNick)}&qty=1&reward=${encodeURIComponent(seat)}`;
+  const checkinUrl = `${window.location.origin}/checkin/result?name=${encodeURIComponent(memberName)}&nick=${encodeURIComponent(memberNick)}&qty=1&reward=${encodeURIComponent(seat)}`;
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-[6px]">
       <div className="w-96 bg-white rounded-2xl overflow-hidden">
