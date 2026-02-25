@@ -1,10 +1,10 @@
 import { QRCodeSVG } from 'qrcode.react';
 import logo from '../assets/images/icons/logo.png';
 
-const DEMO_NAME = '관람객';
-const DEMO_NICK = '뮤즈팬';
+const DEMO_NAME = '김*정';
+const DEMO_NICK = '푸른 오렌지';
 const DEMO_QTY = '1';
-const DEMO_REWARD = '일반석';
+const DEMO_REWARD = 'VIP 일반석';
 
 const QrDemoPage = () => {
   const checkinUrl = `${window.location.origin}/checkin/result?name=${encodeURIComponent(DEMO_NAME)}&nick=${encodeURIComponent(DEMO_NICK)}&qty=${DEMO_QTY}&reward=${encodeURIComponent(DEMO_REWARD)}`;
