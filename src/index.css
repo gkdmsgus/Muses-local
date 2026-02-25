@@ -1,0 +1,173 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('/fonts/Pretendard-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-Medium';
+  src: url('/fonts/Pretendard-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-SemiBold';
+  src: url('/fonts/Pretendard-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-Bold';
+  src: url('/fonts/Pretendard-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-Black';
+  src: url('/fonts/Pretendard-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TTHovesProTrial';
+  src: url('/fonts/TT Hoves Pro Trial Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@theme {
+  /* 폰트 */
+  --font-mainFont: 'Pretendard', system-ui, sans-serif;
+  --font-boldFont: 'Pretendard-Bold', system-ui, sans-serif;
+  --font-mediumFont: 'Pretendard-Medium', system-ui, sans-serif;
+  --font-semiBoldFont: 'Pretendard-SemiBold', system-ui, sans-serif;
+  --font-blackFont: 'Pretendard-Black', system-ui, sans-serif;
+  --font-logoFont: 'TTHovesProTrial', system-ui, sans-serif;
+
+  /* 메인 색상 */
+  --color-mainBlack: #111827;
+  --color-mainWhite: #f9fbfd;
+  /* Purple 색상 */
+  --color-solidPurple: #a855f7;
+  --color-pastelPurple: #e9d5ff;
+  /* Blue 색상 */
+  --color-solidBlue: #6366f1;
+  --color-pastelBlue: #bfdbfe;
+  /* Pink 색상 */
+  --color-solidPink: #ec4899;
+  --color-pastelPink: #fbcfe8;
+  /* 보조 팔레트 - White */
+  --color-white80: #f3f4f6;
+  --color-white60: #e5e7eb;
+  --color-white40: #c3c5c8;
+  /* 보조 팔레트 - Black */
+  --color-black80: #4b5563;
+  --color-black60: #6b7280;
+  --color-black40: #9ca3af;
+}
+
+.title-clamp {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.title-clamp--fixed {
+  line-height: 1.4;
+  min-height: calc(1.4em * 2);
+}
+
+.project-detail-content img {
+  width: 100%;
+}
+
+/* 달성도 진행 바 애니메이션 */
+
+.progress-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+  background: linear-gradient(90deg, var(--color-solidBlue) 0%, var(--color-solidPurple) 50%, var(--color-solidPink) 100%);
+  pointer-events: none;
+}
+
+@keyframes progress-slide {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--progress-width);
+  }
+}
+
+.animate-progress-slide {
+  animation: progress-slide 900ms ease-out forwards;
+}
+
+/* 좋아요 하트 애니메이션 */
+.like-heart--active {
+  color: #ef4444;
+  fill: #ef4444;
+  animation: like-pop 220ms ease-out;
+}
+
+@keyframes like-pop {
+  0% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.like-particle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  line-height: 1;
+  opacity: 0.8;
+  animation: like-particle-float 520ms ease-out forwards;
+}
+
+.like-particle--heart {
+  color: #ef4444;
+}
+
+.like-particle--heart::before {
+  content: '❤';
+}
+
+.like-heart-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes like-particle-float {
+  0% {
+    transform: translateY(0) scale(1.2);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-18px) scale(0.6);
+    opacity: 0;
+  }
+}
