@@ -18,7 +18,7 @@ const QrCard = ({
   memberNick,
   onClose,
 }: QrCardProps) => {
-  const checkinUrl = `${window.location.origin}/checkin/result?name=${encodeURIComponent('김*정')}&nick=${encodeURIComponent('푸른 오렌지')}&qty=1&reward=${encodeURIComponent('VIP 일반석')}`;
+  const checkinUrl = `https://gkdmsgus.github.io/Muses-/checkin/result?name=${encodeURIComponent('김*정')}&nick=${encodeURIComponent('푸른 오렌지')}&qty=1&reward=${encodeURIComponent('VIP 일반석')}`;
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-[6px]">
       <div className="w-96 bg-white rounded-2xl overflow-hidden">

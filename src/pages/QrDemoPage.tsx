@@ -7,7 +7,7 @@ const DEMO_QTY = '1';
 const DEMO_REWARD = 'VIP 일반석';
 
 const QrDemoPage = () => {
-  const checkinUrl = `${window.location.origin}/checkin/result?name=${encodeURIComponent(DEMO_NAME)}&nick=${encodeURIComponent(DEMO_NICK)}&qty=${DEMO_QTY}&reward=${encodeURIComponent(DEMO_REWARD)}`;
+  const checkinUrl = `https://gkdmsgus.github.io/Muses-/checkin/result?name=${encodeURIComponent(DEMO_NAME)}&nick=${encodeURIComponent(DEMO_NICK)}&qty=${DEMO_QTY}&reward=${encodeURIComponent(DEMO_REWARD)}`;
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-purple-50 via-white to-yellow-50 p-8">
